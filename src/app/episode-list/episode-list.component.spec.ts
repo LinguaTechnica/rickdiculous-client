@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EpisodeListComponent } from './episode-list.component';
+import { EpisodesService } from '../episodes.service';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('EpisodeListComponent', () => {
   let component: EpisodeListComponent;
@@ -8,7 +10,8 @@ describe('EpisodeListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EpisodeListComponent ]
+      declarations: [ EpisodeListComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });

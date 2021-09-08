@@ -1,20 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { EpisodeListComponent } from './episode-list.component';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {Episode} from '../episode';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { Episode } from '../episode';
 
 describe('EpisodeListComponent', () => {
   let component: EpisodeListComponent;
   let fixture: ComponentFixture<EpisodeListComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync (() => {
+    TestBed.configureTestingModule({
       declarations: [ EpisodeListComponent ],
       imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EpisodeListComponent);

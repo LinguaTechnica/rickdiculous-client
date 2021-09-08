@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EpisodeListComponent } from './episode-list.component';
-import { EpisodesService } from '../episodes.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {Episode} from '../episode';
 
 describe('EpisodeListComponent', () => {
   let component: EpisodeListComponent;
@@ -31,7 +31,7 @@ describe('EpisodeListComponent', () => {
   });
 
   it('should render each episode', () => {
-    component.episodes = [{name: 'Ep 1'}, {name: 'Ep 2'}];
+    component.episodes = [new Episode(), new Episode()];
     fixture.detectChanges();
     const el = fixture.nativeElement.querySelectorAll('.episode');
     expect(el.length).toEqual(2);

@@ -13,7 +13,7 @@ export class EpisodeListComponent implements OnInit {
   constructor(private episodeService: EpisodesService) { }
 
   ngOnInit(): void {
-    this.episodeService.getAll().subscribe(episodes => this.episodes);
+    this.episodeService.getAll().subscribe(episodes => this.episodes = episodes);
   }
 
 }
